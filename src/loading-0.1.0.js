@@ -54,7 +54,7 @@
             option.maskEle = option.maskEle.replace("sk-fading-circle", ("sk-fading-circle center"));
         }
         if (this[0].tagName == "BODY") {
-
+            option.maskEle = option.maskEle.replace('class="snake-loading"', ('class="snake-loading fixed"'));
         }
         return this.each(function() {
             var $this = $(this);

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+</head>
+<body>
+	<div id="table" style="width: 200px;height: 200px;display: inline-block;border: 1px solid #ddd;">
+        <table>
+            <tr>
+                <td>123</td>
+            </tr>
+        </table>
+    </div>
+    <div id="table2" style="width: 200px;height: 200px;display: inline-block;border: 1px solid #ddd; margin-top: 20px;">
+        <table>
+            <tr>
+                <td>123</td>
+            </tr>
+        </table>
+    </div>
+    <div>
+        <button id="button">loading</button>
+        <button id="button2">loading2</button>
+        <button id="button3">loading3</button>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="../src/loading-0.1.0.js"></script>
+    <script>
+    	(function($) {
+        //模拟请求
+        function ajax() {
+            var dtd = $.Deferred();
+            setTimeout(dtd.resolve, 20000);
+            // setTimeout(dtd.reject, 2000);
+            // setTimeout(dtd.notify, 2000);
+            return dtd;
+        };
+
+        $("#button").on("click", function() {
+            //loading
+            var loading = ajax();
+            $("#table").loading(loading);
+        })
+        $("#button2").on("click", function() {
+            //loading
+            var loading = ajax();
+            $("#table2").loading(loading);
+        })
+        $("#button3").on("click", function() {
+            //loading
+            var loading = ajax();
+            $("body").loading(loading);
+        })
+
+    })(jQuery)
+    </script>
+</body>
+</html>
