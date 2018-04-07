@@ -6,6 +6,7 @@
     left: 0;
     background-color: rgba(0, 0, 0, 0.5);
 }
+
 .snake-loading {
     z-index: 99999;
     position: absolute;

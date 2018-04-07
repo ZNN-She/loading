@@ -6,6 +6,7 @@
     var BASE_PATH = "";
     var CSS_PATH = "";
 
+
     function Loading(promise, element, options) {
         var self = this;
 
