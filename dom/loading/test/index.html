@@ -1,42 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-	<meta charset="UTF-8">
-	<title></title>
+    <meta charset="UTF-8">
+    <title></title>
 </head>
+
 <body>
-	aaa
-	<div id="table" style="width: 200px;height: 200px;display: inline-block;border: 1px solid #ddd;">
+    <div id="table" style="width: 200px;height: 200px;display: inline-block;border: 1px solid #ddd;position: relative;">
         <table>
             <tr>
                 <td>123</td>
             </tr>
         </table>
     </div>
-    <div id="table2" style="width: 200px;height: 200px;display: inline-block;border: 1px solid #ddd; margin-top: 20px;">
-        <div>aaa</div>
-        <span>asfaf</span>
+    <div id="table2" style="width: 200px;height: 200px;display: inline-block;border: 1px solid #ddd; margin-top: 20px;position: relative;">
         <table>
             <tr>
                 <td>123</td>
-		    <td>dddd</td>
             </tr>
         </table>
     </div>
-    本地本地
     <div>
         <button id="button">loading</button>
         <button id="button2">loading2</button>
         <button id="button3">loading3</button>
     </div>
-    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-    <script src="../src/loading-0.1.0.js"></script>
+    <script src="../src/jquery.js"></script>
+    <script src="../src/loading/loading.js"></script>
     <script>
-    	(function($) {
+    (function($) {
         //模拟请求
         function ajax() {
             var dtd = $.Deferred();
-            setTimeout(dtd.resolve, 20000);
+            setTimeout(dtd.resolve, 2000);
             // setTimeout(dtd.reject, 2000);
             // setTimeout(dtd.notify, 2000);
             return dtd;
@@ -50,17 +47,16 @@
         $("#button2").on("click", function() {
             //loading
             var loading = ajax();
-		//bbbb
-            $("#table2").loading(loading);
+            $("#table2").loading(loading,{ type: 'progress' });
         })
         $("#button3").on("click", function() {
             //loading
             var loading = ajax();
-            //aa
-            $("body").loading(loading);
+            $("body").loading(loading, { type: 'large'});
         })
 
     })(jQuery)
     </script>
 </body>
+
 </html>
