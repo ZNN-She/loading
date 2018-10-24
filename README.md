@@ -150,7 +150,7 @@ content | 自定义遮罩内容 | Element | 无 | 否 | 插件满足不了需求
 ##例子
 
 1. [jQuery Dom](./dom/loading/test/index.html)
-2. [React Dom](./dom/react-loading/src/page/Loading/loading.js)
+2. [React Dom](./dom/react-loading/src/page/Loading/Loading.js)
 
 ##总结
 **React Loading**
